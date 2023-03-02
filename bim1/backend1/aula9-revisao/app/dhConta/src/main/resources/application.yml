@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: dh-conta
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER_HOST_PORT:localhost:8888}
+  cloud:
+    config:
+      profile: ${PROFILE:dev}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
